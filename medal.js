@@ -1,29 +1,15 @@
 var svg = document.getElementById("svg");
+var nor = document.getElementById("nor");
+var swed = document.getElementById("swed");
 
-var info =
-    {
-	firedpeeps:[1,1,1,2,3,0,9,4,3,0,0,2,5,3,6],
-	month: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-    }
-var firedpeeps = [1,1,1,2,3,0,9,4,3,0,0,2,5,3,6];
-var month = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+var col = ["gold", "silver", "#966008"];
+var c_xpos = [100, 300, 500];
+var c_ypos = [300, 300, 300];
 
+var nor_size = [14, 14, 11];
+var swed_size = [7,6,1];
 
-var yourefired = function(e){
-
-    console.log("hi");
-    var cont = d3.select("svg");
-    console.log(cont);
-    var circles = cont.selectAll("circle").data(info);
-    console.log(circles);
-    circles.append("circle")
-	.attr("cy", function(d) { return d.firedpeeps*50; })
-	.attr("cx", function(d) { return d.month*40; })
-	.attr("r", 10)
-	.attr("fill", "powderblue")
-    console.log(circles);
-
-    /*
+var medals = function(country){
     var gold = document.createElementNS("http://www.w3.org/2000/svg","circle");
     svg.appendChild(gold);
 
@@ -65,6 +51,5 @@ var yourefired = function(e){
     text.attr('font-family', 'sans-serif');
     text.attr('fill', 'black');
     text.attr('font-size', '2em');
-    */
+    
 }
-svg.addEventListener("click", yourefired);
